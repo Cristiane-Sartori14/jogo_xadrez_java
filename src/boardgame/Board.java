@@ -32,14 +32,14 @@ public class Board {
 	
 	public Piece piece(Position position) {
 		if (!positionExists(position)) {
-			throw new BoardException("posição fora do quadro");
+			throw new BoardException("Posição fora do quadro");
 		}
 		return pieces[position.getRow()][position.getColumn()];
 	}
 	
 	public void placePiece(Piece piece, Position position) {
 		if (thereIsAPiece(position)) {
-			throw new BoardException("já existe uma peça na posição " + position);
+			throw new BoardException("Já existe uma peça na posição " + position);
 
 		}
 		pieces[position.getRow()][position.getColumn()] = piece;
@@ -56,7 +56,7 @@ public class Board {
 	
 	public boolean thereIsAPiece(Position position) {
 		if (!positionExists(position)) {
-			throw new BoardException("posição fora do quadro");
+			throw new BoardException("Posição fora do quadro");
 		}
 		return piece(position) != null;
 	}
